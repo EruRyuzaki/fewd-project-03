@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/app.js" defer></script>
+
+    <title>Weather App</title>
+
+</head>
+
+<body>
+
+    <!-- ==================================================================================================== -->
+
+    <header class="header">
+
+        <div class="header-grid">
+
+            <div class="title-box">
+                <h1 class="title">WEATHER JOURNAL</h1>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ==================================================================================================== -->
+
+    <main class="main">
+
+        <div class="main-grid">
+
+            <div class="input-box">
+
+                <div class="error-message" id="error-message"></div>
+
+                <form action="" class="input-holder">
+
+                    <h1 class="title">INPUT PANEL</h1>
+
+                    <div class="input-box-1">
+                        <div class="country">
+                            <label for="country">Country code</label>
+                            <input type="text" id="country" name="country" maxlength="2">
+                        </div>
+                        <div class="zip">
+                            <label for="zip">Zip code</label>
+                            <input type="text" id="zip" name="zip">
+                        </div>
+                    </div>
+
+                    <div class="input-box-2">
+                        <label for="feels">How do you feel?</label>
+                        <textarea id="feels" name="feels" placeholder="Click here to write..."></textarea>
+                    </div>
+
+                    <div class="input-box-3">
+                        <button type="reset" class="reset" id="reset">RESET</button>
+                        <button type="submit" class="generate" id="generate">GENERATE</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="output-box" id="op-panel">
+
+                <div class="outer-loader" id="outer-loader">
+                    <div class="inner-loader" id="inner-loader"></div>
+                    <div class="loader-text">LOADING...</div>
+                </div>
+
+                <div class="output-holder" id="op-holder">
+
+                    <div class="output-box-1">
+                        <div class="date" id="date-op">-</div>
+                        <div class="location">
+                            <div class="country" id="country-op">-</div>
+                            <div class="city">
+                                <div class="city-zip" id="zip-op">-</div>
+                                <div class="city-name" id="name-op">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="output-box-2">
+                        <div class="feels-op" id="feels-op">-</div>
+                    </div>
+
+                    <div class="output-box-3">
+                        <div class="temperature">
+                            <div class="temp">Current Temperature</div>
+                            <div class="temp-op" id="current-temp-op">-</div>
+                        </div>
+                        <div class="visual">
+                            <div class="icon"><img src="" alt="weather icon" class="icon-op" id="icon-op"></div>
+                            <div class="description" id="desc-op">-</div>
+                        </div>
+                    </div>
+
+                    <div class="output-box-4">
+                        <div class="min-temp">
+                            <div class="temp">Min Temperature</div>
+                            <div class="temp-op" id="min-temp-op">-</div>
+                        </div>
+                        <div class="max-temp">
+                            <div class="temp">Max Temperature</div>
+                            <div class="temp-op" id="max-temp-op">-</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ==================================================================================================== -->
+    
+</body>
+
+</html>

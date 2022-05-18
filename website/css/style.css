@@ -1,0 +1,460 @@
+/* ==================================================================================================== */
+
+@import url(../css/global.css);
+
+/* ==================================================================================================== */
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--color-blue-2) 0%, var(--color-blue-4) 100%);
+}
+
+/* ==================================================================================================== */
+
+header {
+    height: var(--header-height);
+    background-color: var(--color-black-2);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+header .header-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    padding: 0 10% 0 10%;
+}
+
+header .header-grid .title-box {
+    text-align: center;
+}
+
+header .header-grid .title-box .title {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-white-3);
+}
+
+/* ==================================================================================================== */
+
+main {
+    min-height: calc(100vh - var(--header-height));
+    padding: 5rem 5% 5rem 5%;
+}
+
+main .main-grid {
+    max-width: 2000px;
+    margin: 0 auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    row-gap: 5rem;
+}
+
+main .main-grid .input-box {
+    position: relative;
+    padding: 5rem 5% 5rem 5%;
+    background-color: var(--color-black-3);
+    border: 3px solid var(--color-red-3);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .input-box .error-message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-white-4);
+    background-color: var(--color-red-3);
+    transition-property: height;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+}
+
+main .main-grid .input-box .error-message.active {
+    height: 3rem;
+}
+
+main .main-grid .input-box .input-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+}
+
+main .main-grid .input-box .input-holder .title {
+    font-size: 2rem;
+    font-weight: normal;
+    color: var(--color-white-3);
+}
+
+main .main-grid .input-box .input-holder .input-box-1 {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: min-content;
+    row-gap: 2rem;
+    column-gap: 25%;
+}
+
+main .main-grid .input-box .input-holder .input-box-1 .country,
+main .main-grid .input-box .input-holder .input-box-1 .zip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .main-grid .input-box .input-holder .input-box-1 .country label,
+main .main-grid .input-box .input-holder .input-box-1 .zip label {
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+}
+
+main .main-grid .input-box .input-holder .input-box-1 .country input,
+main .main-grid .input-box .input-holder .input-box-1 .zip input {
+    width: 7rem;
+    height: 3rem;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-black-1);
+    background-color: var(--color-white-3);
+    border: 3px solid var(--color-white-1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .input-box .input-holder .input-box-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+main .main-grid .input-box .input-holder .input-box-2 label {
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+}
+
+main .main-grid .input-box .input-holder .input-box-2 textarea {
+    resize: vertical;
+    width: 80%;
+    min-height: 12rem;
+    padding: 1%;
+    font-size: 1.5rem;
+    color: var(--color-black-1);
+    background-color: var(--color-white-3);
+    border: 3px solid var(--color-white-1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .input-box .input-holder .input-box-3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+main .main-grid .input-box .input-holder .input-box-3 button {
+    width: 80%;
+    height: 4rem;
+    font-size: 1.5rem;
+    box-shadow: 0 0 1rem var(--color-black-1);
+    cursor: pointer;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+}
+
+main .main-grid .input-box .input-holder .input-box-3 button.reset {
+    color: var(--color-black-1);
+    background-color: var(--color-red-4);
+    border: 3px solid var(--color-red-3);
+}
+
+main .main-grid .input-box .input-holder .input-box-3 button.reset:hover {
+    background-color: var(--color-red-3);
+}
+
+main .main-grid .input-box .input-holder .input-box-3 button.generate {
+    color: var(--color-black-1);
+    background-color: var(--color-green-3);
+    border: 3px solid var(--color-green-2);
+}
+
+main .main-grid .input-box .input-holder .input-box-3 button.generate:hover {
+    background-color: var(--color-green-2);
+}
+
+/* ==================================================================================================== */
+
+main .main-grid .output-box {
+    position: relative;
+    padding: 5rem 5% 5rem 5%;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+    display: none;
+}
+
+main .main-grid .output-box .outer-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 1px solid var(--color-blue-3);
+    display: none;
+}
+
+main .main-grid .output-box .outer-loader.active {
+    display: unset;
+}
+
+main .main-grid .output-box .outer-loader .inner-loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    border-top: 7px solid var(--color-blue-2);
+}
+
+main .main-grid .output-box .outer-loader .inner-loader.active {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+main .main-grid .output-box .outer-loader .loader-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    font-weight: normal;
+    color: var(--color-black-1);
+}
+
+main .main-grid .output-box .output-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5rem;
+}
+
+main .main-grid .output-box .output-holder .output-box-1 {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: min-content;
+    row-gap: 2rem;
+    column-gap: 20%;
+    align-items: center;
+    padding: 5%;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .date {
+    font-size: 2rem;
+    color: var(--color-white-3);
+    text-align: center;
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20%;
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .location .country {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--color-white-3);
+    text-transform: uppercase;
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .location .city {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .location .city .city-zip {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-white-3);
+}
+
+main .main-grid .output-box .output-holder .output-box-1 .location .city .city-name {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-white-3);
+    white-space: nowrap;
+}
+
+main .main-grid .output-box .output-holder .output-box-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-grid .output-box .output-holder .output-box-2 .feels-op {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 12rem;
+    padding: 1%;
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+    background-color: var(--color-black-4);
+    border: 3px solid var(--color-white-1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .output-box .output-holder .output-box-3 {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: min-content;
+    row-gap: 2rem;
+    align-items: center;
+    padding: 5%;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .temperature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .temperature .temp {
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .temperature .temp-op {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-green-4);
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .visual {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .icon {
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1/1;
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .icon .icon-op {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+main .main-grid .output-box .output-holder .output-box-3 .description {
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+main .main-grid .output-box .output-holder .output-box-4 {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-rows: min-content;
+    row-gap: 2rem;
+    column-gap: 10%;
+    padding: 5%;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 0 1rem var(--color-black-1);
+}
+
+main .main-grid .output-box .output-holder .output-box-4 .min-temp,
+main .main-grid .output-box .output-holder .output-box-4 .max-temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-grid .output-box .output-holder .output-box-4 .min-temp .temp,
+main .main-grid .output-box .output-holder .output-box-4 .max-temp .temp {
+    font-size: 1.5rem;
+    color: var(--color-white-3);
+}
+
+main .main-grid .output-box .output-holder .output-box-4 .min-temp .temp-op {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-blue-4);
+}
+
+main .main-grid .output-box .output-holder .output-box-4 .max-temp .temp-op {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--color-red-4);
+}
+
+/* ==================================================================================================== */
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+
+}
+
+/* ==================================================================================================== */
